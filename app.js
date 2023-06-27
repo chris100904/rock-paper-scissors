@@ -8,13 +8,6 @@ const buttons = document.querySelectorAll(".btn");
 const playerScoreText = document.querySelector(".player-score");
 const computerScoreText = document.querySelector(".computer-score");
 const output = document.querySelector("#output");
-// const roundData = [
-//   { round: 1, imageURL: "" },
-//   { round: 2, imageURL: "" },
-//   { round: 3, imageURL: "" },
-//   { round: 4, imageURL: "" },
-//   { round: 5, imageURL: "" },
-// ];
 const repeatButton = document.querySelector(".button");
 const again = document.querySelector(".again");
 
