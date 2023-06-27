@@ -121,6 +121,10 @@ html {
   border-radius: 25%;
   font-size: 18px;
 }
+
+.again .button:hover{
+  filter: brightness(80%);
+}
 .footer {
   display: flex;
   padding: 16px 0px;
