@@ -2,31 +2,33 @@ let playerScore = 0;
 let computerScore = 0;
 let roundCount = 0;
 let playerChoice;
+let gameOver = false;
 
 const buttons = document.querySelectorAll(".btn");
 const playerScoreText = document.querySelector(".player-score");
 const computerScoreText = document.querySelector(".computer-score");
 const output = document.querySelector("#output");
-const roundData = [
-  { round: 1, imageURL: "" },
-  { round: 2, imageURL: "" },
-  { round: 3, imageURL: "" },
-  { round: 4, imageURL: "" },
-  { round: 5, imageURL: "" },
-];
+// const roundData = [
+//   { round: 1, imageURL: "" },
+//   { round: 2, imageURL: "" },
+//   { round: 3, imageURL: "" },
+//   { round: 4, imageURL: "" },
+//   { round: 5, imageURL: "" },
+// ];
 const repeatButton = document.querySelector(".button");
+const again = document.querySelector(".again");
 
 buttons.forEach((button) => {
   button.addEventListener("click", function () {
-    playerChoice = button.id;
-    game();
+    if (!gameOver){
+      playerChoice = button.id;
+      game();
+    }
   });
 });
 
-repeatButton.forEach((button) => {
-  button.addEventListener("click", function () {
-    startOver();
-  });
+repeatButton.addEventListener("click", function () {
+  restart();
 });
 
 function getComputerChoice() {
@@ -46,8 +48,10 @@ function updateCardImage(imageURL) {
   const text = card.querySelector(".text");
   img.src = imageURL;
   img.classList.remove("placeholder");
+  img.classList.add("temp");
   img.alt = `Round ${roundCount}`;
   text.classList.remove("placeholder");
+  text.classList.add("temp");
 }
 
 function singleRound(playerSelection) {
@@ -106,11 +110,16 @@ function game() {
   if (playerScore == 3 && computerScore < 2) {
     output.textContent =
       "Congratulations! You won! The computer can't catch up to your score.";
+      again.classList.remove("placeholder");
+      gameOver = true;
   } else if (computerScore == 3 && playerScore < 2) {
     output.textContent =
       "Oh no, you lost! You can't catch up to the computer's score anymore.";
+      again.classList.remove("placeholder");
+      gameOver = true;
   }
   if (roundCount == 5) {
+    again.classList.remove("placeholder");
     if (playerScore > computerScore) {
       output.textContent = "Congratulations! You won best out of 5!";
     } else if (playerScore < computerScore) {
@@ -118,5 +127,22 @@ function game() {
     } else {
       output.textContent = "It's a tie!";
     }
+    gameOver = true;
   }
+}
+
+function restart() {
+  roundCount = 0;
+  playerScore = 0;
+  computerScore = 0;
+  output.textContent = "Please choose rock, paper, or scissors.";
+  playerScoreText.textContent = "Player: 0";
+  computerScoreText.textContent = "Computer: 0";
+  again.classList.add("placeholder");
+  const img = document.querySelectorAll(".temp");
+  img.forEach((image) => {
+    image.classList.remove("temp");
+    image.classList.add("placeholder");
+  });
+  gameOver = false;
 }

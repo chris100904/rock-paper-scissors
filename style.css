@@ -86,7 +86,7 @@ html {
   text-align: center;
 }
 
-.card img.placeholder, .card .text.placeholder{
+.placeholder{
   display: none;
 }
 
@@ -100,12 +100,11 @@ html {
 
 #output{
   font-size: 32px;
-  margin-bottom: 
 }
 
-/* .again .placeholder{
+.again.placeholder{
   display: none;
-} */
+}
 
 .again{
   display: flex;
