@@ -1,0 +1,134 @@
+html {
+  font-family: "Exo 2", sans-serif;
+  background: url(images/dark-blue.avif);
+  background-size: 100% 100%;
+  color: white;
+}
+
+.header {
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  flex: 1;
+}
+
+.instruction{
+  font-size: 48px;
+}
+
+.body .container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.btn {
+  border-radius: 125px;
+  overflow: hidden;
+}
+
+.btn img {
+  display: block;
+  object-fit: contain;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.btn:hover{
+  transform: scale(1.2);
+  filter: brightness(80%);
+}
+
+.scoreboard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scores{
+  display: flex;
+  justify-content: center;
+}
+
+.player-score,
+.computer-score {
+  font-size: 24px;
+  font-weight: lighter;
+  margin: 0 50px;
+}
+
+.cards{
+  margin-top: 50px;
+  display: flex;
+  gap: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  align-items: center;
+  max-width: 250px;
+  text-align: center;
+}
+
+.card img.placeholder, .card .text.placeholder{
+  display: none;
+}
+
+.card img{
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+#output{
+  font-size: 32px;
+  margin-bottom: 
+}
+
+/* .again .placeholder{
+  display: none;
+} */
+
+.again{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 32px;
+  font-style: italic;
+}
+
+.again .button{
+  padding: 12px 18px;
+  border-radius: 25%;
+  font-size: 18px;
+}
+.footer {
+  display: flex;
+  padding: 16px 0px;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
