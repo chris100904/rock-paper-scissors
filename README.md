@@ -1,6 +1,8 @@
 # rock-paper-scissors
 Project: Rock Paper Scissors from Odin Project
 
+Live preview: https://chris100904.github.io/rock-paper-scissors/
+
 This is a simple website that simulates a 5 round rock, paper, scissors game between a player and a computer. The computer is randomly generating a choice and the player chooses what they want.
 
 Skills learned:
